@@ -1,0 +1,31 @@
+*{
+	/*box-sizing: border-box;*/
+}
+.calculatrice
+{
+	float:left;
+	width: 200px;
+	border: 1px solid black;
+}
+.calculatrice > .btn{
+	text-decoration: none;
+	
+	width:50px;
+	height:50px;
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
+	border: 1px solid black;
+	vertical-align: middle;
+	text-align: center;
+	
+}
+.calculatrice > .btn_v{
+	
+	height:100px;
+	float: right;
+}
+.calculatrice > .btn_h{
+	
+	width:100px;
+}
