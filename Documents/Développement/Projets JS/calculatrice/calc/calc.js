@@ -1,7 +1,7 @@
-var calc_vars = {"nombre1":null, "nombre2": null , "operation" : null, "operations":{}};
+let calc_vars = {"nombre1":null, "nombre2": null , "operation" : null, "operations":{}};
 /*Initialisation de la calculatrice*/
 function calc_init(){
-	var btnList = document.querySelectorAll(".calculator .btn");
+	let btnList = document.querySelectorAll(".calculator .btn");
 	for(i = 0; i < btnList.length ; ++i){
 		btnList[i].addEventListener("click", calc_btn_pressed);
 	}
@@ -20,7 +20,7 @@ function calc_init(){
 }
 function calc_btn_pressed(){
 	if(this.classList.contains("btn_number")){
-		var elem = calc_vars.operation.innerHTML == "" ? calc_vars.nombre1 : calc_vars.nombre2;
+		let elem = calc_vars.operation.innerHTML == "" ? calc_vars.nombre1 : calc_vars.nombre2;
 		if(elem.innerHTML == "0")
 			elem.innerHTML = "";
 		elem.innerHTML += this.innerHTML;
@@ -35,15 +35,15 @@ function calc_btn_pressed(){
 	}
 }
 function calc_dot(){
-	var elem = calc_vars.operation.innerHTML == "" ? calc_vars.nombre1 : calc_vars.nombre2;
+	let elem = calc_vars.operation.innerHTML == "" ? calc_vars.nombre1 : calc_vars.nombre2;
 	if(elem.innerHTML.indexOf('.') == -1){
 		elem.innerHTML += ".";
 	}
 }
 function calc_equal(){
-		var nbr1 = parseFloat(calc_vars.nombre1.innerHTML);
-		var nbr2 = parseFloat(calc_vars.nombre2.innerHTML);
-		var op = calc_vars.operation.innerHTML;
+		let nbr1 = parseFloat(calc_vars.nombre1.innerHTML);
+		let nbr2 = parseFloat(calc_vars.nombre2.innerHTML);
+		let op = calc_vars.operation.innerHTML;
 		if(nbr1 != NaN && nbr2 != NaN && op != ""){
 			calc_reset();
 			calc_vars.nombre1.innerHTML = calc_vars.operations[op](nbr1, nbr2);

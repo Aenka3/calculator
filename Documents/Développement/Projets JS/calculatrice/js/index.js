@@ -37,9 +37,9 @@ let calc = {
   "etat": 0//0 vierge, 1 operation en ecriture
 };
 function calc_init() {
-  var inputs = document.querySelectorAll(".calculator .btn");
-  for (i = 0; i < inputs.length; ++i) {
-    inputs[i].addEventListener("click", calc_clicked);
+  var btn = document.querySelectorAll(".calculator .btn");
+  for (i = 0; i < btn.length; ++i) {
+    btn[i].addEventListener("click", calc_clicked);
   }
   calc.output = document.getElementById('output');
   calc.operations["+"] = calc_f_plus;
@@ -54,8 +54,7 @@ function calc_clicked() {
       calc.output.value += this.value;
       calc.operateur = this.value;
     }
-  } else
-    if (this.classList.contains("number")) {
+  } else if (this.classList.contains("number")) {
       if (calc.operateur == "") {
         if (calc.nombre1 != null && calc.nombre1 != "0" && calc.etat == 1)
           calc.nombre1 += this.value;
